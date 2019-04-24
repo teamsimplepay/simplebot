@@ -40,7 +40,7 @@ class Videographer::SpeechProvider::AwsPolly < Videographer::SpeechProvider::Bas
   def client
     amazon_client_args = { region: Videographer::Config.aws_region,
       access_key_id: Videographer::Config.aws_id,
-      secret_access_key: Videographer::Config.aws_key,
+      secret_access_key: Videographer::Config.aws_secret,
     }
     @client ||= Aws::Polly::Client.new(amazon_client_args)
   end
