@@ -21,3 +21,7 @@ before_install:
   # - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew update; fi
   # - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew install ffmpeg; fi
   # - ffmpeg -hwaccels
+  # install chromedriver (copied from our Jenkins setup)
+  curl -Lo /tmp/chromedriver.zip https://chromedriver.storage.googleapis.com/`curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE`/chromedriver_linux64.zip
+  cd /tmp && unzip chromedriver.zip && rm chromedriver.zip && chmod a+x chromedriver
+  sudo mv /tmp/chromedriver /usr/local/bin/chromedriver
