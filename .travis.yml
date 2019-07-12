@@ -1,5 +1,5 @@
 ---
-dist: bionic
+# dist: bionic # going back to default (Xenial) to see if it resolves issues
 sudo: false
 language: ruby
 cache: bundler
