@@ -1,11 +1,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "videographer/version"
+require "video_bot/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "videographer"
-  spec.version       = Videographer::VERSION
+  spec.name          = "videobot"
+  spec.version       = VideoBot::VERSION
   spec.authors       = ["Dave Ungerer"]
   spec.email         = ["dave@simplepay.co.za"]
 
@@ -34,15 +34,17 @@ Gem::Specification.new do |spec|
   spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   end
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.bindir        = "bin"
+  spec.executables   << "simplebot"
   spec.require_paths = ["lib"]
 
   spec.add_dependency "capybara"
   spec.add_dependency "selenium-webdriver" # Can't drive Chrome wtihout it
   spec.add_dependency "headless"
   spec.add_dependency "wavefile"
-  spec.add_dependency "aws-sdk-polly"
+  # TODO: use only polly, it's more lightweight!
+  # spec.add_dependency "aws-sdk-polly"
+  spec.add_dependency "aws-sdk"
   spec.add_dependency "activesupport" # For cattr_accessor
 
   spec.add_development_dependency "bundler", "~> 2.0"
