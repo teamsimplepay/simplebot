@@ -1081,15 +1081,17 @@ GEM
       concurrent-ruby (~> 1.0)
     jmespath (1.4.0)
     mini_mime (1.0.2)
+    mini_portile2 (2.5.0)
     minitest (5.11.3)
-    nokogiri (1.11.1-x86_64-linux)
+    nokogiri (1.11.1)
+      mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     public_suffix (4.0.6)
     racc (1.5.2)
     rack (2.2.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
-    rake (10.5.0)
+    rake (13.0.3)
     regexp_parser (2.0.3)
     rubyzip (2.3.0)
     selenium-webdriver (3.142.7)
@@ -1109,7 +1111,7 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 2.0)
   minitest (~> 5.0)
-  rake (~> 10.0)
+  rake (~> 13.0)
   videobot!
 
 BUNDLED WITH
